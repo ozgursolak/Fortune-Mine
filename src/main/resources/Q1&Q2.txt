@@ -1,0 +1,13 @@
+Question1: How can we avoid callback hell with the new features of JS?
+
+Answer:
+We can get rid of callback hell by using (Promise and then keyword) or (async and await keywords).
+------------------------------------------------------------------------------------------------------
+Question2: How does NodeJS handle more than one request at the same time while it is a single thread?
+
+Answer:
+NodeJS event loops are only single-threaded. The entire NodeJS architecture is not single-threaded.
+There is EventQueue and listener for that which is named as EventLoop.
+
+Cluster module or worker_thread module can run events paralelly if the system is multicore.
+
