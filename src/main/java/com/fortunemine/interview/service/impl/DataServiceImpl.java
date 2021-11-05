@@ -32,7 +32,7 @@ public class DataServiceImpl implements DataService {
     @Override
     @Transactional
     public void initializeDB() {
-        final Player player = createPlayer("Özgür Solak", "ozgur@gmail.com");
+        final Player player = createPlayer("benan yavuz", "ozgur@gmail.com");
         final Wallet wallet = createWallet(player);
         final List<Reward> rewards = new ArrayList<>();
         final List<String> rewardNames = new ArrayList<>();

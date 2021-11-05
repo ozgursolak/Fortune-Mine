@@ -10,6 +10,7 @@ public class ErrorDetails {
 
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy hh:mm:ss")
     private final LocalDateTime timestamp;
+
     private String message;
 
     public ErrorDetails() {

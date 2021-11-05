@@ -9,9 +9,7 @@ public class BaseException extends RuntimeException {
     private final HttpStatus httpStatus;
 
     public BaseException(final HttpStatus httpStatus, final String message) {
-
         super(message);
         this.httpStatus = httpStatus;
     }
-
 }
