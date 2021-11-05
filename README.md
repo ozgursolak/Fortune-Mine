@@ -2,7 +2,7 @@
 
 It is a reward mechanism application.On this app, a client is able to award players after specific events.
 
-Important For SetUp: 
+## Important For Setup: 
  
 * The app is configured to connect to the _**fortune_mine**_ database which served on port **5448**.
 If you want to change, you can do it on **_application.properties_**.
