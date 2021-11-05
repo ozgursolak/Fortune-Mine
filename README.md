@@ -9,4 +9,4 @@ If you want to change the configuration, you can do it on **_application.propert
 
 * After booting the app, you can send a get request to **/players/initialize** endpoint in order to initialize the db.
 * This endpoint will create records for player, reward, wallet_reward, upcoming_reward and level_completion_reward tables.Afterwards,
-you will be able to use the endpoints which are serving on 8080 port. 
+you will be able to use the endpoints which are serving on **8080** port. 
