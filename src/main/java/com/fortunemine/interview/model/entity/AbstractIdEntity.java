@@ -10,6 +10,8 @@ import java.util.UUID;
 import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Data
 @MappedSuperclass
 public abstract class AbstractIdEntity {
@@ -22,5 +24,6 @@ public abstract class AbstractIdEntity {
     private UUID id;
 
     @Column(name = "IS_DELETED")
+    @JsonIgnore
     private Boolean isDeleted = Boolean.FALSE;
 }

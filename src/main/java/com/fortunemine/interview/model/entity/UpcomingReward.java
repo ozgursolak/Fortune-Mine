@@ -6,6 +6,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.Where;
@@ -13,12 +14,13 @@ import org.hibernate.annotations.Where;
 @Getter
 @Setter
 @Entity
-@Table(name = "PLAYER_REWARD")
+@Table(name = "UPCOMING_REWARD")
 @Where(clause = "is_deleted = false")
-public class PlayerReward extends AbstractIdEntity {
+public class UpcomingReward extends AbstractIdEntity {
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "player_id", nullable = false)
+    @JsonIgnore
     private Player player;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)

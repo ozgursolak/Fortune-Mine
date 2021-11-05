@@ -2,14 +2,14 @@ package com.fortunemine.interview.payload.response;
 
 import javax.validation.constraints.NotBlank;
 
-import java.util.Set;
+import java.util.List;
+import java.util.Map;
+
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fortunemine.interview.model.entity.Player;
-import com.fortunemine.interview.model.entity.Reward;
-import com.fortunemine.interview.model.entity.Wallet;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
 
 @Getter
 @RequiredArgsConstructor
@@ -20,9 +20,8 @@ public class State {
     private final Player player;
 
     @JsonProperty("wallet")
-    @NotBlank
-    private final Wallet wallet;
+    private final Map<String, Integer> walletInfoMap;
 
     @JsonProperty("rewards")
-    private final Set<Reward> rewards;
+    private final List<Map<String, Object>> rewardMap;
 }

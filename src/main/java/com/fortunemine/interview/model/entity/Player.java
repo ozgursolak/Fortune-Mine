@@ -3,17 +3,16 @@ package com.fortunemine.interview.model.entity;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.Email;
 
-import java.util.Set;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.Where;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 @Getter
 @Setter
@@ -22,11 +21,9 @@ import org.hibernate.annotations.Where;
 @Where(clause = "is_deleted = false")
 public class Player extends AbstractDateEntity {
 
-    @OneToMany(mappedBy = "player", cascade = {
-        CascadeType.PERSIST,
-        CascadeType.MERGE })
-    @Where(clause = "is_deleted = false")
-    private Set<PlayerReward> playerRewards;
+    @OneToOne(mappedBy = "player", cascade = CascadeType.ALL)
+    @JsonIgnore
+    private Wallet wallet;
 
     @Column(name = "FULL_NAME", nullable = false, columnDefinition = "varchar(70)")
     @JsonProperty("fullname")

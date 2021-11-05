@@ -1,16 +1,17 @@
 package com.fortunemine.interview.payload.response;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 @Getter
-@RequiredArgsConstructor
+@Setter
 public class GeneralResponse {
 
-    @JsonProperty("state")
-    private final State state;
-
     @JsonProperty("is_success")
-    private final Boolean isSuccess;
+    private Boolean isSuccess;
+
+    @JsonProperty("state")
+    private State state;
 }
